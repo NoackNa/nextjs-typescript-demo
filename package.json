@@ -10,7 +10,7 @@
     "lint": "eslint",
     "format": "prettier --write .",
     "prepare": "husky",
-    "pre-commit": "yarn lint && yarn format",
+    "pre-commit": "yarn lint && yarn format && yarn test",
     "test": "vitest run .",
     "test:watch": "vitest watch ."
   },
