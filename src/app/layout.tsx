@@ -1,6 +1,5 @@
 import type { Metadata } from 'next'
 import '@/styles/globals.css'
-import { GeistSans } from 'geist/font/sans'
 
 export const metadata: Metadata = {
   title: 'NextJs TypeScript Demo',
@@ -14,7 +13,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${GeistSans.variable} antialiased`}>{children}</body>
+      <body>{children}</body>
     </html>
   )
 }
