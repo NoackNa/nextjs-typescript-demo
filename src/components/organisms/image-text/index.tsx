@@ -1,27 +1,19 @@
-import { Button } from '@/components/atoms/button'
 import { ImageComponent, ImageItemProps } from '@/components/atoms/image'
-import { SectionTitle } from '@/components/atoms/section-title'
+import IntroText, { IntroTextProps } from '@/components/molecules/intro-text'
 import { classNames } from '@/utils/classNames'
 
 export type ImageItems = Array<ImageItemProps>
 
 export type ImageTextModuleProps = {
   images?: ImageItems
-  title: string
-  description: string
-  buttonText?: string
   textAlign?: 'left' | 'right'
   id?: number
-}
+} & IntroTextProps
 
 export const ImageTextModule = ({ images, title, description, buttonText, textAlign }: ImageTextModuleProps) => {
   return (
     <section className={classNames('flex', textAlign === 'right' ? '' : '')}>
-      <article>
-        <SectionTitle text={title} />
-        <p>{description}</p>
-        {buttonText && <Button text={buttonText} href={'/'} />}
-      </article>
+      <IntroText title={title} description={description} buttonText={buttonText} />
       {images && (
         <div>
           {images.map((image) => (
