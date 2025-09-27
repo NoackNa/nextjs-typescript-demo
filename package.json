@@ -10,7 +10,9 @@
     "lint": "eslint",
     "format": "prettier --write .",
     "prepare": "husky",
-    "pre-commit": "yarn lint && yarn format"
+    "pre-commit": "yarn lint && yarn format",
+    "test": "vitest run .",
+    "test:watch": "vitest watch ."
   },
   "dependencies": {
     "next": "15.5.4",
@@ -22,10 +24,14 @@
     "@eslint/eslintrc": "^3",
     "@tailwindcss/postcss": "^4",
     "@tailwindcss/typography": "^0.5.15",
+    "@testing-library/dom": "^10.1.0",
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^16.2.0",
     "@trivago/prettier-plugin-sort-imports": "^5.2.2",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "@vitejs/plugin-react": "^4.3.4",
     "eslint": "^9",
     "eslint-config-next": "15.5.4",
     "eslint-config-prettier": "^10.1.8",
@@ -35,10 +41,12 @@
     "eslint-plugin-react": "^7.37.5",
     "eslint-plugin-react-hooks": "^5.2.0",
     "husky": "^9.1.7",
+    "jsdom": "^27.0.0",
     "prettier": "^3.6.2",
     "prettier-plugin-tailwindcss": "^0.6.5",
     "tailwindcss": "^4",
     "typescript": "^5",
-    "typescript-eslint": "^8.44.1"
+    "typescript-eslint": "^8.44.1",
+    "vitest": "^3.0.7"
   }
 }
