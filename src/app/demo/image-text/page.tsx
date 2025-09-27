@@ -14,8 +14,10 @@ export default async function Page() {
 
   return (
     <DefaultTemplate>
-      <Headline text="ImageText Demo Page" />
-      <Button text="Get back to start page" href="/" />
+      <section>
+        <Headline text="ImageText Demo Page" />
+        <Button text="Get back to start page" href="/" />
+      </section>
       {imageTextItems?.map((imageTextItem: ImageTextModuleProps) => {
         return <ImageTextModule key={imageTextItem.id} {...imageTextItem} />
       })}

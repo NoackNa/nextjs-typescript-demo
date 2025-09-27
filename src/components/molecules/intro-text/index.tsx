@@ -9,7 +9,7 @@ export type IntroTextProps = {
 
 const IntroText = ({ title, description, buttonText }: IntroTextProps) => {
   return (
-    <article>
+    <article className="grid gap-4">
       <SectionTitle text={title} />
       <p>{description}</p>
       {buttonText && <Button text={buttonText} href={'/'} />}
