@@ -20,7 +20,6 @@ export async function GET() {
         title: 'Advice',
         description:
           'This content is provided to demonstrate a simple feature implementation. It’s for demo purposes only, not a finished or production-ready setup.',
-        textAlign: 'left',
       },
       {
         id: `image-text-02`,
