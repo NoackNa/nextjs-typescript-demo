@@ -1,0 +1,13 @@
+message="$(cat $1)"
+
+echo commitmessage: $message
+
+requiredPattern="^(feat|refactor|fix|test|docs|chore|ci|build|style){1}(\([\w\-\.]+\))?(!)?: .*"
+if ! [[ "$message" =~ ""$requiredPattern"" ]];
+then
+echo "🚨 Wrong commit message! 😕"
+echo "The commit message must have this format:"
+echo "Example: feat: this is a commit message"
+echo "Allowed verbs in imperative mood: feat|refactor|fix|test|docs|chore|ci|build|style"
+exit 1
+fi
