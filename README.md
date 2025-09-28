@@ -1,36 +1,66 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# nextjs-typescript-demo
 
-## Getting Started
+This app demonstrates a few basic functionalities and features in Next.js.
+
+## folder structure
+
+```
+src/
+├── app
+├── components
+│   ├── atoms
+│   ├── molecules
+│   ├── organisms
+│   └── templates
+├── utils
+├── hooks
+└── styles
+```
+
+- `app` folder contains the routing logic of Next.js (App Router)
+- `Components` follow the atomic design principle. Each component is isolated in its own subfolder.
+- `utils` contains all useful snippets intended for reuse across the project
+- `hooks` contains all hooks meant for client-side usage
+- `styles` contains all global styles intended for reuse across the project
+
+TypeScript type definitions can be defined and applied throughout the entire project
+
+# Setup
+
+## Environment Setup
+
+Copy over example files:
+
+```sh
+cp .env.example .env
+```
+
+## Install dependencies
+
+```sh
+yarn
+```
+
+## Most Important Commands
 
 First, run the development server:
 
 ```bash
-npm run dev
-# or
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Run unit tests
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+yarn test
+```
 
-## Learn More
+Run test coverage
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+test:coverage
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+For further information look into [package.json](https://github.com/NoackNa/nextjs-typescript-demo/blob/main/package.json)
