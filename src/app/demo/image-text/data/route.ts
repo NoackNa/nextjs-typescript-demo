@@ -1,4 +1,4 @@
-import { ImageItems, ImageTextModuleProps } from '@/components/organisms/image-text'
+import { ImageItems, type ImageTextModuleProps } from '@/components/organisms/image-text'
 import { NextResponse } from 'next/server'
 
 const createMockImages = (count: number): ImageItems => {

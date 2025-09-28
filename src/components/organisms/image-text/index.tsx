@@ -1,5 +1,5 @@
-import { ImageComponent, ImageItemProps } from '@/components/atoms/image'
-import IntroText, { IntroTextProps } from '@/components/molecules/intro-text'
+import { ImageComponent, type ImageItemProps } from '@/components/atoms/image'
+import IntroText, { type IntroTextProps } from '@/components/molecules/intro-text'
 import { classNames } from '@/utils/classNames'
 
 export type ImageItems = Array<ImageItemProps>

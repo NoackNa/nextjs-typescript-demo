@@ -1,4 +1,4 @@
-import { ImageTextModuleProps } from '@/components/organisms/image-text'
+import { type ImageTextModuleProps } from '@/components/organisms/image-text'
 
 export async function getDemoImageText(): Promise<{ imageTextItems: Array<ImageTextModuleProps> }> {
   const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL || ''}/demo/image-text/data`, {
