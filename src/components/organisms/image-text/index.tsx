@@ -7,7 +7,7 @@ export type ImageItems = Array<ImageItemProps>
 export type ImageTextModuleProps = {
   images?: ImageItems
   textAlign?: 'right'
-  id?: number
+  id?: number | string
 } & IntroTextProps
 
 export const ImageTextModule = ({ images, title, description, buttonText, textAlign }: ImageTextModuleProps) => {

@@ -1,4 +1,5 @@
-import { ImageItems } from '@/components/organisms/image-text'
+import { ImageItems, ImageTextModuleProps } from '@/components/organisms/image-text'
+import { NextResponse } from 'next/server'
 
 const createMockImages = (count: number): ImageItems => {
   const imageItems: ImageItems = []
@@ -13,41 +14,40 @@ const createMockImages = (count: number): ImageItems => {
 }
 
 export async function GET() {
-  return Response.json({
-    imageTextItems: [
-      {
-        id: `image-text-01`,
-        title: 'Advice',
-        description:
-          'This content is provided to demonstrate a simple feature implementation. It’s for demo purposes only, not a finished or production-ready setup.',
-      },
-      {
-        id: `image-text-02`,
-        images: createMockImages(4),
-        title: 'Enjoy the Ride',
-        description:
-          'Discover the ultimate riding experience with our powerful sport motorcycles. Engineered for speed, style, and precision.',
-        buttonText: 'Learn More',
-        textAlign: 'left',
-      },
-      {
-        id: `image-text-03`,
-        images: createMockImages(1),
-        title: 'Enjoy the Ride',
-        description:
-          'Discover the ultimate riding experience with our powerful sport motorcycles. Engineered for speed, style, and precision.',
-        buttonText: 'Learn More',
-        textAlign: 'right',
-      },
-      {
-        id: `image-text-04`,
-        images: createMockImages(9),
-        title: 'Enjoy the Ride',
-        description:
-          'Discover the ultimate riding experience with our powerful sport motorcycles. Engineered for speed, style, and precision.',
-        buttonText: 'Learn More',
-        textAlign: 'right',
-      },
-    ],
-  })
+  const items: Array<ImageTextModuleProps> = [
+    {
+      id: `image-text-01`,
+      title: 'Advice',
+      description:
+        'This content is provided to demonstrate a simple feature implementation. It’s for demo purposes only, not a finished or production-ready setup.',
+    },
+    {
+      id: `image-text-02`,
+      images: createMockImages(4),
+      title: 'Enjoy the Ride',
+      description:
+        'Discover the ultimate riding experience with our powerful sport motorcycles. Engineered for speed, style, and precision.',
+      buttonText: 'Learn More',
+    },
+    {
+      id: `image-text-03`,
+      images: createMockImages(1),
+      title: 'Enjoy the Ride',
+      description:
+        'Discover the ultimate riding experience with our powerful sport motorcycles. Engineered for speed, style, and precision.',
+      buttonText: 'Learn More',
+      textAlign: 'right',
+    },
+    {
+      id: `image-text-04`,
+      images: createMockImages(9),
+      title: 'Enjoy the Ride',
+      description:
+        'Discover the ultimate riding experience with our powerful sport motorcycles. Engineered for speed, style, and precision.',
+      buttonText: 'Learn More',
+      textAlign: 'right',
+    },
+  ]
+
+  return NextResponse.json({ imageTextItems: items })
 }
