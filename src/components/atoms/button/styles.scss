@@ -1,0 +1,9 @@
+@import 'tailwindcss';
+
+.button--primary {
+  @apply w-max rounded-lg bg-green-700;
+  @apply font-medium text-sm text-white;
+  @apply hover:bg-green-900;
+  @apply focus:outline-none focus:ring-4 focus:ring-green-300;
+  @apply px-5 py-2.5;
+}
