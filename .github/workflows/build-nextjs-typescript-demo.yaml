@@ -61,3 +61,27 @@ jobs:
         run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
       - name: Run linter
         run: yarn lint
+
+  unit-tests:
+    name: Run ui-unit and unit tests
+    runs-on: ubuntu-latest
+    steps:
+      - run: corepack enable yarn
+        shell: sh
+      - name: Clone repository
+        uses: actions/checkout@v4.1.1
+      - name: Detect-package-manager
+        id: detect-package-manager
+        run: |
+          echo "manager=yarn" >> $GITHUB_OUTPUT
+          echo "command=install" >> $GITHUB_OUTPUT
+          echo "runner=yarn" >> $GITHUB_OUTPUT
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: '22'
+          cache: ${{ steps.detect-package-manager.outputs.manager }}
+      - name: Install dependencies
+        run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
+      - name: Run ui-unit and unit tests
+        run: yarn test
