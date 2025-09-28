@@ -1,0 +1,53 @@
+name: build and test the project
+
+on: [push]
+jobs:
+  build:
+    name: build next js
+    runs-on: ubuntu-latest
+    steps:
+      - name: Clone repository
+        uses: actions/checkout@v4.1.1
+      - name: Detect-package-manager
+        id: detect-package-manager
+        run: |
+          echo "manager=yarn" >> $GITHUB_OUTPUT
+          echo "command=install" >> $GITHUB_OUTPUT
+          echo "runner=yarn" >> $GITHUB_OUTPUT
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: '22'
+          cache: ${{ steps.detect-package-manager.outputs.manager }}
+      - name: Install dependencies
+        run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
+      - name: Build with Next.js
+        run: npm run build
+      - name: Install dependencies
+        run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
+      - name: Build with Next.js
+        run: npm run build
+      - name: Run typescript compiler
+        run: npx tsc --noEmit
+
+  lint:
+    name: Run linter
+    runs-on: ubuntu-latest
+    steps:
+      - name: Clone repository
+        uses: actions/checkout@v4.1.1
+      - name: Detect-package-manager
+        id: detect-package-manager
+        run: |
+          echo "manager=yarn" >> $GITHUB_OUTPUT
+          echo "command=install" >> $GITHUB_OUTPUT
+          echo "runner=yarn" >> $GITHUB_OUTPUT
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: '22'
+          cache: ${{ steps.detect-package-manager.outputs.manager }}
+      - name: Install dependencies
+        run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
+      - name: Run linter
+        run: yarn lint
