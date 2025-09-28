@@ -12,7 +12,8 @@
     "prepare": "husky",
     "pre-commit": "yarn lint && yarn format && yarn test",
     "test": "vitest run .",
-    "test:watch": "vitest watch ."
+    "test:watch": "vitest watch .",
+    "test:coverage": "yarn test:watch --run --coverage"
   },
   "dependencies": {
     "next": "15.5.4",
@@ -32,6 +33,7 @@
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "@vitejs/plugin-react": "^4.3.4",
+    "@vitest/coverage-v8": "3.2.4",
     "eslint": "^9",
     "eslint-config-next": "15.5.4",
     "eslint-config-prettier": "^10.1.8",
