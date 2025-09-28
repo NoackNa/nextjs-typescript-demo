@@ -9,6 +9,7 @@ export default function Home() {
       <DefaultTemplate>
         <Headline alignment="center" text="Demo Page" />
         <Button text="ImageText Module" href="/demo/image-text" />
+        <Button text="StarRating" href="/demo/star-rating" />
       </DefaultTemplate>
       <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
         <a
