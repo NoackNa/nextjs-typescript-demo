@@ -28,6 +28,7 @@ export async function GET() {
       description:
         'Discover the ultimate riding experience with our powerful sport motorcycles. Engineered for speed, style, and precision.',
       buttonText: 'Learn More',
+      textAlign: 'right',
     },
     {
       id: `image-text-03`,
@@ -36,7 +37,7 @@ export async function GET() {
       description:
         'Discover the ultimate riding experience with our powerful sport motorcycles. Engineered for speed, style, and precision.',
       buttonText: 'Learn More',
-      textAlign: 'right',
+      textAlign: 'left',
     },
     {
       id: `image-text-04`,
@@ -45,7 +46,6 @@ export async function GET() {
       description:
         'Discover the ultimate riding experience with our powerful sport motorcycles. Engineered for speed, style, and precision.',
       buttonText: 'Learn More',
-      textAlign: 'right',
     },
   ]
 

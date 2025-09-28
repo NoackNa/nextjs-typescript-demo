@@ -6,7 +6,7 @@ export type ImageItems = Array<ImageItemProps>
 
 export type ImageTextModuleProps = {
   images?: ImageItems
-  textAlign?: 'right'
+  textAlign?: 'right' | 'left'
   id?: number | string
 } & IntroTextProps
 
@@ -15,15 +15,13 @@ export const ImageTextModule = ({ images, title, description, buttonText, textAl
 
   return (
     <section className={classNames('grid gap-6 lg:gap-10', maxFourImages && 'grid-rows-1 lg:grid-cols-2')}>
-      <div className={classNames(textAlign === 'right' && maxFourImages && 'lg:col-start-2')}>
-        <IntroText title={title} description={description} buttonText={buttonText} />
-      </div>
+      <IntroText title={title} description={description} buttonText={buttonText} />
       {images && (
         <div
           className={classNames(
-            'grid gap-3',
-            maxFourImages ? 'grid-cols-4 lg:row-start-1' : 'grid-cols-6 grid-rows-2 lg:gap-5',
-            textAlign === 'right' && 'lg:col-start-1',
+            'grid gap-3 grid-cols-3 lg:grid-cols-4',
+            maxFourImages ? 'lg:row-start-1' : 'lg:grid-cols-6 grid-rows-2 lg:gap-5 lg:max-w-max',
+            textAlign === 'left' && maxFourImages ? 'lg:col-start-2' : 'lg:col-start-1',
           )}
         >
           {images.map((image) => (
