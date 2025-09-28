@@ -8,12 +8,11 @@ export default defineConfig({
   test: {
     include: ['src/**/*.unit.spec.*', 'src/**/*.ui-unit.spec.*'],
     exclude: ['**/*.snap'],
-    environmentMatchGlobs: [['src/**/*.ui-unit.spec.*', 'jsdom']],
     coverage: {
       include: ['src/*'],
       provider: 'v8',
     },
-    environment: 'node',
+    environment: 'jsdom',
     setupFiles: './vitest-setup.ts',
   },
   resolve: {
